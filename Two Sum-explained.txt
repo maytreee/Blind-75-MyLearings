@@ -1,0 +1,27 @@
+Two Sum :
+Steps of the Algorithm
+Create a Hash Map: We start by creating an empty hash map (dictionary in Python). This will store each number we encounter in the array as a key and its index as the value.
+Iterate Through the Array: We loop through the array using a for loop. In each iteration, we consider the current number (num) and its index (i).
+Calculate the Complement: For each number, we calculate its complement. The complement is the number that, when added to the current number, equals the target. We calculate it as complement = target - num.
+Check if the Complement Exists in the Hash Map: We check if this complement is already in our hash map. If it is, it means we have found a pair of numbers that add up to the target. The current number and the number that we stored earlier (the complement) are the pair we're looking for.
+Return Indices If Pair is Found: If we find the complement in the hash map, we return its index (which we get from the hash map) and the current index (i).
+Store the Current Number and Index in the Hash Map: If the complement is not found in the hash map, we add the current number and its index to the hash map. This is for checking in future iterations.
+Continue Until the End of the Array: We continue this process for each element in the array.
+Return Empty if No Pair is Found: If no such pair is found by the end of the array, we return an empty list.
+Why Use a Hash Map?
+The reason for using a hash map is its efficiency in looking up elements. Checking if an element exists in a hash map is generally an O(1) operation, meaning it takes a constant amount of time regardless of the size of the hash map. This makes our overall algorithm O(n) in time complexity, as we are only iterating through the array once.
+Python Implementation
+Here is the Python code for this algorithm:
+python
+Copy code
+def twoSum(nums, target):
+ hash_map = {} # Create an empty hash map
+ for i, num in enumerate(nums): # Iterate through the array
+ complement = target - num # Calculate the complement
+ if complement in hash_map: # Check if the complement is in the hash map
+ return [hash_map[complement], i] # Return the indices if found
+ hash_map[num] = i # Add the current number and its index to the hash map
+ return [] # Return empty if no pair is found
+
+
+
