@@ -1,0 +1,23 @@
+Algorithm
+Create an Empty String r: This will hold the normalized version of the input string s.
+Iterate Over Each Character in s:
+Check if the Character is Alphanumeric: Using i.isalnum(), which checks if i is either a letter or a number.
+Append Alphanumeric Characters to r: If the character is alphanumeric, it's added to r.
+Convert r to Lowercase: This ensures the comparison is case-insensitive.
+Check if r is a Palindrome:
+Compare r with its reverse (r[::-1]). In Python, [::-1] is used to create a reversed copy of the string.
+If r is the same as r[::-1], return True. Otherwise, return False.
+Data Structure
+String (r): The primary data structure used here is a string. You create a new string r to store the filtered and normalized version of the input string s.
+Example with Input
+Let's apply this algorithm to an example input: s = "A man, a plan, a canal: Panama".
+
+Create an Empty String r: r = "".
+Iterate and Append Alphanumeric Characters:
+After iterating through s, and appending alphanumeric characters, r becomes "AmanaplanacanalPanama".
+Convert to Lowercase:
+r becomes "amanaplanacanalpanama".
+Check if r is a Palindrome:
+r is "amanaplanacanalpanama" and r[::-1] is also "amanaplanacanalpanama".
+Since they are the same, return True.
+Your approach efficiently processes the string and checks for the palindrome condition. The use of string operations and conditional checks makes it a straightforward and effective solution for this problem.
